@@ -11,4 +11,4 @@ foreach(target ${ALL_TARGETS})
     target_link_libraries(${target} PRIVATE ${SANITIZER_FLAGS})
 endforeach()
 
-target_link_libraries(sfml_renderwindow PRIVATE sfml-system sfml-network sfml-graphics sfml-window)
+target_link_libraries(sfml_renderwindow PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window)

@@ -1,3 +1,4 @@
+#include <fmt/core.h>
 #include <SFML/Graphics.hpp>
 
 int main()
@@ -11,6 +12,9 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+
+        auto size = window.getSize();
+        window.setTitle(fmt::format("SFML RenderWindow {}x{}", size.x, size.y));
 
         window.clear(sf::Color::Black);
         window.display();
