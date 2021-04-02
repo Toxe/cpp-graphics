@@ -1,10 +1,12 @@
 set(ALL_TARGETS
     sfml_60fps
     sfml_renderwindow
+    sfml_vsync
 )
 
 add_executable(sfml_60fps sfml/sfml_60fps.cpp)
 add_executable(sfml_renderwindow sfml/sfml_renderwindow.cpp)
+add_executable(sfml_vsync sfml/sfml_vsync.cpp)
 
 foreach(target ${ALL_TARGETS})
     set_target_properties(${target} PROPERTIES CXX_EXTENSIONS OFF)
@@ -15,3 +17,4 @@ endforeach()
 
 target_link_libraries(sfml_60fps PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window)
 target_link_libraries(sfml_renderwindow PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window)
+target_link_libraries(sfml_vsync PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window)
