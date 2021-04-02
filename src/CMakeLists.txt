@@ -1,10 +1,8 @@
 set(ALL_TARGETS
     sfml_renderwindow
-    sfml_basic_tutorial
 )
 
 add_executable(sfml_renderwindow sfml/sfml_renderwindow.cpp)
-add_executable(sfml_basic_tutorial sfml_basic_tutorial/sfml_basic_tutorial.cpp)
 
 foreach(target ${ALL_TARGETS})
     set_target_properties(${target} PROPERTIES CXX_EXTENSIONS OFF)
@@ -14,4 +12,3 @@ foreach(target ${ALL_TARGETS})
 endforeach()
 
 target_link_libraries(sfml_renderwindow PRIVATE sfml-system sfml-network sfml-graphics sfml-window)
-target_link_libraries(sfml_basic_tutorial PRIVATE fmt::fmt spdlog::spdlog spdlog::spdlog_header_only sfml-system sfml-network sfml-graphics sfml-window)
