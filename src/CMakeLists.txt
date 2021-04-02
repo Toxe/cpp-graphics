@@ -4,9 +4,9 @@ set(ALL_TARGETS
     sfml_vsync
 )
 
-add_executable(sfml_60fps sfml/sfml_60fps.cpp)
-add_executable(sfml_renderwindow sfml/sfml_renderwindow.cpp)
-add_executable(sfml_vsync sfml/sfml_vsync.cpp)
+add_executable(sfml_60fps WIN32 sfml/sfml_60fps.cpp)
+add_executable(sfml_renderwindow WIN32 sfml/sfml_renderwindow.cpp)
+add_executable(sfml_vsync WIN32 sfml/sfml_vsync.cpp)
 
 foreach(target ${ALL_TARGETS})
     set_target_properties(${target} PROPERTIES CXX_EXTENSIONS OFF)
@@ -15,6 +15,6 @@ foreach(target ${ALL_TARGETS})
     target_link_libraries(${target} PRIVATE ${SANITIZER_FLAGS})
 endforeach()
 
-target_link_libraries(sfml_60fps PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window)
-target_link_libraries(sfml_renderwindow PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window)
-target_link_libraries(sfml_vsync PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window)
+target_link_libraries(sfml_60fps PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window $<$<PLATFORM_ID:Windows>:sfml-main>)
+target_link_libraries(sfml_renderwindow PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window $<$<PLATFORM_ID:Windows>:sfml-main>)
+target_link_libraries(sfml_vsync PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window $<$<PLATFORM_ID:Windows>:sfml-main>)
