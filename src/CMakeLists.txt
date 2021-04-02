@@ -1,7 +1,9 @@
 set(ALL_TARGETS
+    sfml_60fps
     sfml_renderwindow
 )
 
+add_executable(sfml_60fps sfml/sfml_60fps.cpp)
 add_executable(sfml_renderwindow sfml/sfml_renderwindow.cpp)
 
 foreach(target ${ALL_TARGETS})
@@ -11,4 +13,5 @@ foreach(target ${ALL_TARGETS})
     target_link_libraries(${target} PRIVATE ${SANITIZER_FLAGS})
 endforeach()
 
+target_link_libraries(sfml_60fps PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window)
 target_link_libraries(sfml_renderwindow PRIVATE fmt::fmt sfml-system sfml-network sfml-graphics sfml-window)
