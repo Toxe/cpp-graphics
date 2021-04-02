@@ -4,6 +4,7 @@
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(640, 480), "SFML RenderWindow");
+    sf::Clock clock;
 
     while (window.isOpen()) {
         sf::Event event;
@@ -13,8 +14,10 @@ int main()
                 window.close();
         }
 
+        auto elapsedTime = clock.restart();
+        auto fps = 1.0f / elapsedTime.asSeconds();
         auto size = window.getSize();
-        window.setTitle(fmt::format("SFML RenderWindow {}x{}", size.x, size.y));
+        window.setTitle(fmt::format("SFML RenderWindow {}x{} FPS: {:.0f}", size.x, size.y, fps));
 
         window.clear(sf::Color::Black);
         window.display();
