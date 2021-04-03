@@ -17,6 +17,8 @@ int main(int, char* argv[])
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+            else if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape)
+                window.close();
         }
 
         const auto elapsedTime = clock.restart();
