@@ -6,6 +6,11 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+static void error_callback(const int, const char* description)
+{
+    spdlog::error("GLFW error: {}", description);
+}
+
 static void key_callback(GLFWwindow* window, const int key, const int, const int action, const int)
 {
     if (action == GLFW_RELEASE && key == GLFW_KEY_ESCAPE)
@@ -16,27 +21,24 @@ int main(int, char* argv[])
 {
     const std::string progname{std::filesystem::path{argv[0]}.filename().string()};
 
-    if (!glfwInit()) {
-        spdlog::critical("unable to init GLFW (code: {:#010x})", glfwGetError(nullptr));
+    glfwSetErrorCallback(error_callback);
+
+    if (!glfwInit())
         return 1;
-    }
 
     auto window = glfwCreateWindow(640, 480, progname.c_str(), nullptr, nullptr);
 
-    if (!window) {
-        spdlog::critical("unable to create window (code: {:#010x})", glfwGetError(nullptr));
+    if (!window)
         return 1;
-    }
 
     glfwMakeContextCurrent(window);
 
     if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
-        spdlog::critical("failed to initialize OpenGL context");
+        spdlog::error("failed to initialize OpenGL context");
         return 1;
     }
 
     glfwSwapInterval(1);
-
     glfwSetKeyCallback(window, (GLFWkeyfun) key_callback);
 
     auto previousFrameTime = glfwGetTime();
