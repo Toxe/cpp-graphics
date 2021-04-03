@@ -1,5 +1,5 @@
 {
     "name": "cpp-graphics",
     "version": "0.0.1",
-    "dependencies": ["fmt", "spdlog", "sfml"]
+    "dependencies": ["fmt", "spdlog", "sfml", "sdl2"]
 }
