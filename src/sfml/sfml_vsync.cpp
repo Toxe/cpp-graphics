@@ -4,7 +4,7 @@
 #include <fmt/core.h>
 #include <SFML/Graphics.hpp>
 
-int main(int argc, char* argv[])
+int main(int, char* argv[])
 {
     std::string progname{std::filesystem::path{argv[0]}.filename().string()};
 

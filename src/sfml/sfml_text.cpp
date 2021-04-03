@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <spdlog/spdlog.h>
 
-int main(int argc, char* argv[])
+int main(int, char* argv[])
 {
     std::string progname{std::filesystem::path{argv[0]}.filename().string()};
 
