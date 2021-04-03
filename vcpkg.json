@@ -1,5 +1,17 @@
 {
     "name": "cpp-graphics",
     "version": "0.0.1",
-    "dependencies": ["fmt", "spdlog", "sfml", "sdl2", "sdl2-ttf", "glfw3", "glad"]
+    "dependencies": [
+        "fmt",
+        "spdlog",
+        "sfml",
+        "sdl2",
+        "sdl2-ttf",
+        "glfw3",
+        "glad",
+        {
+            "name": "imgui",
+            "features": ["glfw-binding", "opengl3-glad-binding"]
+        }
+    ]
 }
