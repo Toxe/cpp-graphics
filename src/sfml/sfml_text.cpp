@@ -12,18 +12,32 @@ int main(int, char* argv[])
     sf::RenderWindow window(sf::VideoMode(640, 480), progname);
     window.setVerticalSyncEnabled(true);
 
-    sf::Font font;
+    sf::Font fontProportional;
+    sf::Font fontMonospaced;
 
-    if (!font.loadFromFile("assets/fonts/RobotoMono-Regular.ttf")) {
-        spdlog::critical("unable to load font");
+    if (!fontProportional.loadFromFile("assets/fonts/Roboto-Regular.ttf")) {
+        spdlog::critical("unable to load font: assets/fonts/Roboto-Regular.ttf");
         return 1;
     }
 
-    sf::Text text;
-    text.setFont(font);
-    text.setCharacterSize(30);
-    text.setFillColor(sf::Color::White);
-    text.setPosition(20, 20);
+    if (!fontMonospaced.loadFromFile("assets/fonts/RobotoMono-Regular.ttf")) {
+        spdlog::critical("unable to load font: assets/fonts/RobotoMono-Regular.ttf");
+        return 1;
+    }
+
+    sf::Text text1;
+    text1.setFont(fontMonospaced);
+    text1.setCharacterSize(30);
+    text1.setFillColor(sf::Color::White);
+    text1.setPosition(20, 20);
+
+    sf::Text text2;
+    text2.setFont(fontProportional);
+    text2.setCharacterSize(20);
+    text2.setFillColor(sf::Color::White);
+    text2.setPosition(20, 60);
+    text2.setStyle(sf::Text::Style::Italic);
+    text2.setString("press ESC to quit");
 
     sf::Clock clock;
 
@@ -33,6 +47,8 @@ int main(int, char* argv[])
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+            else if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape)
+                window.close();
         }
 
         const auto elapsedTime = clock.restart();
@@ -40,10 +56,11 @@ int main(int, char* argv[])
         const auto size = window.getSize();
         const auto title = fmt::format("{} {}x{} FPS: {:.0f}", progname, size.x, size.y, fps);
         window.setTitle(title);
-        text.setString(title);
+        text1.setString(title);
 
         window.clear(sf::Color::Black);
-        window.draw(text);
+        window.draw(text1);
+        window.draw(text2);
         window.display();
     }
 
