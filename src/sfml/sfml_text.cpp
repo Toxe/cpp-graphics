@@ -7,7 +7,7 @@
 
 int main(int, char* argv[])
 {
-    std::string progname{std::filesystem::path{argv[0]}.filename().string()};
+    const std::string progname{std::filesystem::path{argv[0]}.filename().string()};
 
     sf::RenderWindow window(sf::VideoMode(640, 480), progname);
     window.setVerticalSyncEnabled(true);
@@ -35,10 +35,10 @@ int main(int, char* argv[])
                 window.close();
         }
 
-        auto elapsedTime = clock.restart();
-        auto fps = 1.0f / elapsedTime.asSeconds();
-        auto size = window.getSize();
-        auto title = fmt::format("{} {}x{} FPS: {:.0f}", progname, size.x, size.y, fps);
+        const auto elapsedTime = clock.restart();
+        const auto fps = 1.0f / elapsedTime.asSeconds();
+        const auto size = window.getSize();
+        const auto title = fmt::format("{} {}x{} FPS: {:.0f}", progname, size.x, size.y, fps);
         window.setTitle(title);
         text.setString(title);
 
