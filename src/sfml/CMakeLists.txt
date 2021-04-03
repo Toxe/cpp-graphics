@@ -1,3 +1,5 @@
+find_package(SFML COMPONENTS system window graphics CONFIG REQUIRED)
+
 set(ALL_TARGETS
     sfml_60fps
     sfml_fullscreen

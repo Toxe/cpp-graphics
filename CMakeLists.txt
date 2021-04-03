@@ -14,6 +14,5 @@ include(cmake/Sanitizers.cmake)
 
 find_package(fmt CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
-find_package(SFML COMPONENTS system window graphics CONFIG REQUIRED)
 
 add_subdirectory(src/sfml)
