@@ -7,12 +7,12 @@ set(ALL_TARGETS
     sfml_vsync
 )
 
-add_executable(sfml_60fps WIN32 sfml/sfml_60fps.cpp)
-add_executable(sfml_fullscreen WIN32 sfml/sfml_fullscreen.cpp)
-add_executable(sfml_no_resize WIN32 sfml/sfml_no_resize.cpp)
-add_executable(sfml_renderwindow WIN32 sfml/sfml_renderwindow.cpp)
-add_executable(sfml_text WIN32 sfml/sfml_text.cpp)
-add_executable(sfml_vsync WIN32 sfml/sfml_vsync.cpp)
+add_executable(sfml_60fps WIN32 sfml_60fps.cpp)
+add_executable(sfml_fullscreen WIN32 sfml_fullscreen.cpp)
+add_executable(sfml_no_resize WIN32 sfml_no_resize.cpp)
+add_executable(sfml_renderwindow WIN32 sfml_renderwindow.cpp)
+add_executable(sfml_text WIN32 sfml_text.cpp)
+add_executable(sfml_vsync WIN32 sfml_vsync.cpp)
 
 foreach(target ${ALL_TARGETS})
     set_target_properties(${target} PROPERTIES CXX_EXTENSIONS OFF)
