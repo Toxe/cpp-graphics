@@ -11,7 +11,7 @@
         "glad",
         {
             "name": "imgui",
-            "features": ["glfw-binding", "opengl3-glad-binding"]
+            "features": ["glfw-binding", "sdl2-binding", "opengl3-glad-binding"]
         }
     ]
 }
