@@ -17,3 +17,4 @@ find_package(spdlog CONFIG REQUIRED)
 
 add_subdirectory(src/sfml)
 add_subdirectory(src/sdl2)
+add_subdirectory(src/glfw)
