@@ -133,6 +133,7 @@ int main(int, char* argv[])
         glfwSetWindowTitle(window, title.c_str());
 
         glViewport(0, 0, width, height);
+        glClearColor(clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // render ImGui frame
