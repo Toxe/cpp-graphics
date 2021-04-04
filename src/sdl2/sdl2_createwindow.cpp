@@ -2,8 +2,8 @@
 #include <string>
 
 #include <fmt/core.h>
-#include <SDL2/SDL.h>
 #include <spdlog/spdlog.h>
+#include <SDL2/SDL.h>
 
 int main(int, char* argv[])
 {

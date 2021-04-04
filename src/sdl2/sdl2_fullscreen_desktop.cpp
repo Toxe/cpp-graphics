@@ -2,9 +2,9 @@
 #include <string>
 
 #include <fmt/core.h>
+#include <spdlog/spdlog.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
-#include <spdlog/spdlog.h>
 
 int main(int, char* argv[])
 {

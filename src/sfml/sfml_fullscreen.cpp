@@ -2,8 +2,8 @@
 #include <string>
 
 #include <fmt/core.h>
-#include <SFML/Graphics.hpp>
 #include <spdlog/spdlog.h>
+#include <SFML/Graphics.hpp>
 
 int main(int, char* argv[])
 {
