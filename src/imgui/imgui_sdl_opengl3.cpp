@@ -79,7 +79,6 @@ int main(int, char* argv[])
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
     bool running = true;
-    auto previousFrameTime = SDL_GetTicks();
 
     while (running) {
         SDL_Event event;
@@ -139,11 +138,8 @@ int main(int, char* argv[])
         const int width = (int) io.DisplaySize.x;
         const int height = (int) io.DisplaySize.y;
 
-        const auto currentFrameTime = SDL_GetTicks();
-        const auto elapsedTime = currentFrameTime - previousFrameTime;
-        const auto fps = elapsedTime > 0 ? (1000.0f / static_cast<float>(elapsedTime)) : 1000.0f;
+        const auto fps = 1.0 / ImGui::GetIO().DeltaTime;
         const auto title = fmt::format("{} {}x{} FPS: {:.0f}", progname, width, height, fps);
-        previousFrameTime = currentFrameTime;
         SDL_SetWindowTitle(window, title.c_str());
 
         glViewport(0, 0, width, height);

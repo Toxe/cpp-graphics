@@ -75,8 +75,6 @@ int main(int, char* argv[])
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
-    auto previousFrameTime = glfwGetTime();
-
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
 
@@ -126,10 +124,8 @@ int main(int, char* argv[])
         int width, height;
         glfwGetFramebufferSize(window, &width, &height);
 
-        const auto currentFrameTime = glfwGetTime();
-        const auto fps = 1.0 / (currentFrameTime - previousFrameTime);
+        const auto fps = 1.0 / ImGui::GetIO().DeltaTime;
         const auto title = fmt::format("{} {}x{} FPS: {:.0f}", progname, width, height, fps);
-        previousFrameTime = currentFrameTime;
         glfwSetWindowTitle(window, title.c_str());
 
         glViewport(0, 0, width, height);
