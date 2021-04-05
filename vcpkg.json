@@ -12,6 +12,7 @@
         {
             "name": "imgui",
             "features": ["glfw-binding", "sdl2-binding", "opengl3-glad-binding"]
-        }
+        },
+        "imgui-sfml"
     ]
 }
