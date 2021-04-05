@@ -7,6 +7,8 @@
 #include <imgui-SFML.h>
 #include <SFML/Graphics.hpp>
 
+#include "demo.h"
+
 int main(int, char* argv[])
 {
     const std::string progname{std::filesystem::path{argv[0]}.filename().string()};
@@ -43,11 +45,6 @@ int main(int, char* argv[])
     text2.setStyle(sf::Text::Style::Italic);
     text2.setString("press ESC to quit");
 
-    // ImGui demo state
-    bool show_demo_window = true;
-    bool show_another_window = false;
-    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-
     sf::Clock clock;
 
     while (window.isOpen()) {
@@ -64,42 +61,7 @@ int main(int, char* argv[])
 
         ImGui::SFML::Update(window, clock.restart());
 
-        // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
-        if (show_demo_window)
-            ImGui::ShowDemoWindow(&show_demo_window);
-
-        // 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
-        {
-            static float f = 0.0f;
-            static int counter = 0;
-
-            ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
-
-            ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-            ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
-            ImGui::Checkbox("Another Window", &show_another_window);
-
-            ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-            ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
-
-            if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-                counter++;
-            ImGui::SameLine();
-            ImGui::Text("counter = %d", counter);
-
-            ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-            ImGui::End();
-        }
-
-        // 3. Show another simple window.
-        if (show_another_window)
-        {
-            ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
-            ImGui::Text("Hello from another window!");
-            if (ImGui::Button("Close Me"))
-                show_another_window = false;
-            ImGui::End();
-        }
+        auto clear_color = imgui_demo();
 
         const auto fps = 1.0 / ImGui::GetIO().DeltaTime;
         const auto size = window.getSize();
@@ -107,7 +69,7 @@ int main(int, char* argv[])
         window.setTitle(title);
         text1.setString(title);
 
-        window.clear(sf::Color::Black);
+        window.clear(sf::Color{static_cast<sf::Uint8>(255.0f * clear_color.x), static_cast<sf::Uint8>(255.0f * clear_color.y), static_cast<sf::Uint8>(255.0f * clear_color.z)});
         window.draw(text1);
         window.draw(text2);
         ImGui::SFML::Render(window);
