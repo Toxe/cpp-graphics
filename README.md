@@ -23,6 +23,8 @@ imgui-sfml
 
 Default build instructions for CMake and Vcpkg. These examples assume that Vcpkg is installed in your home directory. Adjust the paths if necessary.
 
+#### Vcpkg toolchain
+
 Pass your Vcpkg toolchain file via `CMAKE_TOOLCHAIN_FILE`, for example on Windows:  
 `-DCMAKE_TOOLCHAIN_FILE=%HOMEPATH%\vcpkg\scripts\buildsystems\vcpkg.cmake`
 
@@ -41,8 +43,6 @@ $ ./build/src/sfml/sfml_text
 ```
 
 ### Windows
-
-Pass your Vcpkg toolchain file via `CMAKE_TOOLCHAIN_FILE`, for example: `-DCMAKE_TOOLCHAIN_FILE=%HOMEPATH%\vcpkg\scripts\buildsystems\vcpkg.cmake`.
 
 ```
 $ mkdir build
