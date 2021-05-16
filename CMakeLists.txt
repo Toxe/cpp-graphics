@@ -3,6 +3,9 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 project("C++ Graphics Tests and Examples" LANGUAGES CXX)
 
+# adjust or override some CMake defaults
+include(cmake/OverrideCMakeDefaults.cmake)
+
 # default compiler options and warnings
 include(cmake/DefaultCompilerOptionsAndWarnings.cmake)
 
