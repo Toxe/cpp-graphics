@@ -32,7 +32,7 @@ foreach(target ${ALL_TARGETS})
 endforeach()
 
 target_link_libraries(imgui_glfw_opengl3 PRIVATE fmt::fmt spdlog::spdlog spdlog::spdlog_header_only glfw glad::glad imgui::imgui)
-target_link_libraries(imgui_sdl_opengl3 PRIVATE fmt::fmt spdlog::spdlog spdlog::spdlog_header_only SDL2::SDL2 SDL2::SDL2main imgui::imgui)
+target_link_libraries(imgui_sdl_opengl3 PRIVATE fmt::fmt spdlog::spdlog spdlog::spdlog_header_only SDL2::SDL2 SDL2::SDL2main glad::glad imgui::imgui)
 target_link_libraries(imgui_sfml PRIVATE fmt::fmt spdlog::spdlog spdlog::spdlog_header_only sfml-system sfml-network sfml-graphics sfml-window $<$<PLATFORM_ID:Windows>:sfml-main> ImGui-SFML::ImGui-SFML)
 target_link_libraries(imgui_sfml_custom_font PRIVATE fmt::fmt spdlog::spdlog spdlog::spdlog_header_only sfml-system sfml-network sfml-graphics sfml-window $<$<PLATFORM_ID:Windows>:sfml-main> ImGui-SFML::ImGui-SFML)
 target_link_libraries(imgui_sfml_default_font_scale PRIVATE fmt::fmt spdlog::spdlog spdlog::spdlog_header_only sfml-system sfml-network sfml-graphics sfml-window $<$<PLATFORM_ID:Windows>:sfml-main> ImGui-SFML::ImGui-SFML)
