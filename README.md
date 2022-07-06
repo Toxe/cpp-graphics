@@ -5,16 +5,13 @@ C++ 2D Graphics Tests and Examples using SDL2, SFML, GLFW and Dear ImGui.
 ## Dependencies:
 
 - CMake
-- Vcpkg
-  - fmt
-  - spdlog
-  - sfml
-  - sdl2
-  - sdl2-ttf
-  - glfw3
-  - glad
-  - imgui + glfw-binding, sdl2-binding, opengl3-glad-binding
-  - imgui-sfml
+- Vcpkg (recommended)
+
+Also install a couple of system libraries:
+
+```
+$ sudo apt install libgl1-mesa-dev libglu1-mesa-dev libudev-dev libx11-dev libxcursor-dev libxi-dev libxinerama-dev libxrandr-dev xorg-dev
+```
 
 ## Build
 
