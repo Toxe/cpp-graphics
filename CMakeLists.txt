@@ -1,7 +1,10 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.20)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-project("C++ Graphics Tests and Examples" LANGUAGES CXX)
+project("C++ 2D Graphics Tests and Examples" LANGUAGES CXX)
+
+# testing settings
+# include(cmake/Testing.cmake)
 
 # adjust or override some CMake defaults
 include(cmake/OverrideCMakeDefaults.cmake)
