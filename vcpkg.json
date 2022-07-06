@@ -1,44 +1,44 @@
 {
     "name": "cpp-graphics",
     "version": "0.0.1",
-    "builtin-baseline": "41874992952fffd37c60583391802e29b6f14d86",
+    "builtin-baseline": "82601c43686f3ab5703cec30ee84986bdd146372",
     "dependencies": [
         {
             "name": "fmt",
-            "version>=": "8.0.1"
+            "version>=": "8.1.1#1"
         },
         {
             "name": "glad",
-            "version>=": "0.1.34#1"
+            "version>=": "0.1.34#3"
         },
         {
             "name": "glfw3",
-            "version>=": "3.3.4"
+            "version>=": "3.3.7"
         },
         {
             "name": "imgui",
-            "version>=": "1.84.2#1",
+            "version>=": "1.88",
             "features": ["glfw-binding", "opengl3-binding", "sdl2-binding"]
         },
         {
             "name": "imgui-sfml",
-            "version>=": "2.1#3"
+            "version>=": "2.5#1"
         },
         {
             "name": "sdl2",
-            "version>=": "2.0.16"
+            "version>=": "2.0.22#1"
         },
         {
             "name": "sdl2-ttf",
-            "version>=": "2.0.15#4"
+            "version>=": "2.0.15#5"
         },
         {
             "name": "sfml",
-            "version>=": "2.5.1#10"
+            "version>=": "2.5.1#13"
         },
         {
             "name": "spdlog",
-            "version>=": "1.9.2"
+            "version>=": "1.10.0#1"
         }
     ]
 }
