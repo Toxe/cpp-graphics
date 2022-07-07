@@ -73,12 +73,12 @@ int main(int, char* argv[])
         previousFrameTime = currentFrameTime;
         SDL_SetWindowTitle(window, title.c_str());
 
-        const auto textSurface1 = TTF_RenderText_Blended(fontMonospaced, title.c_str(), {255, 255, 255});
+        const auto textSurface1 = TTF_RenderText_Blended(fontMonospaced, title.c_str(), {255, 255, 255, 255});
 
         if (!textSurface1)
             spdlog::error("unable to render text: {}", TTF_GetError());
 
-        const auto textSurface2 = TTF_RenderText_Blended(fontProportional, "press ESC to quit", {255, 255, 255});
+        const auto textSurface2 = TTF_RenderText_Blended(fontProportional, "press ESC to quit", {255, 255, 255, 255});
 
         if (!textSurface2)
             spdlog::error("unable to render text: {}", TTF_GetError());
