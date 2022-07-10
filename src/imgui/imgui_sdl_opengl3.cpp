@@ -69,7 +69,7 @@ int main(int, char* argv[])
     }
 
     // Load GL extensions using glad
-    if (!gladLoadGLLoader((GLADloadproc) SDL_GL_GetProcAddress)) {
+    if (!gladLoadGLLoader(static_cast<GLADloadproc>(SDL_GL_GetProcAddress))) {
         spdlog::critical("Failed to initialize the OpenGL context");
         return 1;
     }
