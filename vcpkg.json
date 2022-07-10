@@ -26,7 +26,14 @@
         },
         {
             "name": "sdl2",
-            "version>=": "2.0.22#1"
+            "version>=": "2.0.22#1",
+            "features": ["x11"],
+            "platform": "linux"
+        },
+        {
+            "name": "sdl2",
+            "version>=": "2.0.22#1",
+            "platform": "!linux"
         },
         {
             "name": "sdl2-ttf",
