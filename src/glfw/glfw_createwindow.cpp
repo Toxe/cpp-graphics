@@ -1,10 +1,11 @@
 #include <filesystem>
 #include <string>
 
-#include <fmt/core.h>
-#include <spdlog/spdlog.h>
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "glad/glad.h"
+
+#include "GLFW/glfw3.h"
+#include "fmt/core.h"
+#include "spdlog/spdlog.h"
 
 static void error_callback(const int, const char* description)
 {

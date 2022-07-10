@@ -1,13 +1,14 @@
 #include <filesystem>
 #include <string>
 
-#include <fmt/core.h>
-#include <spdlog/spdlog.h>
-#include <imgui.h>
-#include <imgui_impl_glfw.h>
-#include <imgui_impl_opengl3.h>
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "glad/glad.h"
+
+#include "GLFW/glfw3.h"
+#include "fmt/core.h"
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
+#include "spdlog/spdlog.h"
 
 #include "demo.h"
 
@@ -31,7 +32,7 @@ int main(int, char* argv[])
     if (!glfwInit())
         return 1;
 
-    // Decide GL + GLSL versions
+        // Decide GL + GLSL versions
 #if defined(IMGUI_IMPL_OPENGL_ES2)
     // GL ES 2.0 + GLSL 100
     const char* glsl_version = "#version 100";
@@ -65,7 +66,6 @@ int main(int, char* argv[])
     // setup ImGui
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO();
     ImGui::StyleColorsDark();
 
     // setup ImGui Platform/Renderer backends

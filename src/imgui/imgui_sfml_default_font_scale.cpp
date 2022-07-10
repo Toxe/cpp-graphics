@@ -1,11 +1,11 @@
 #include <filesystem>
 #include <string>
 
-#include <fmt/core.h>
-#include <spdlog/spdlog.h>
-#include <imgui.h>
-#include <imgui-SFML.h>
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
+#include "fmt/core.h"
+#include "imgui-SFML.h"
+#include "imgui.h"
+#include "spdlog/spdlog.h"
 
 #include "demo.h"
 
@@ -17,7 +17,7 @@ int main(int, char* argv[])
     window.setVerticalSyncEnabled(true);
 
     ImGui::SFML::Init(window, false);
-    ImGuiIO &io = ImGui::GetIO();
+    ImGuiIO& io = ImGui::GetIO();
 
     ImFontConfig font_cfg;
     io.Fonts->Clear();

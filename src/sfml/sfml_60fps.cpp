@@ -1,8 +1,8 @@
 #include <filesystem>
 #include <string>
 
-#include <fmt/core.h>
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
+#include "fmt/core.h"
 
 int main(int, char* argv[])
 {

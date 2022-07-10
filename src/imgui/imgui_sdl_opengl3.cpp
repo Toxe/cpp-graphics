@@ -1,13 +1,12 @@
 #include <filesystem>
 #include <string>
 
-#include <fmt/core.h>
-#include <spdlog/spdlog.h>
-#include <imgui.h>
-#include <imgui_impl_sdl.h>
-#include <imgui_impl_opengl3.h>
-#include <SDL2/SDL.h>
-#include <glad/glad.h>
+#include "SDL2/SDL.h"
+#include "fmt/core.h"
+#include "glad/glad.h"
+#include "imgui_impl_opengl3.h"
+#include "imgui_impl_sdl.h"
+#include "spdlog/spdlog.h"
 
 #include "demo.h"
 

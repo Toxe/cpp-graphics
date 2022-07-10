@@ -1,9 +1,9 @@
 #include <filesystem>
 #include <string>
 
-#include <fmt/core.h>
-#include <spdlog/spdlog.h>
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
+#include "fmt/core.h"
+#include "spdlog/spdlog.h"
 
 int main(int, char* argv[])
 {
